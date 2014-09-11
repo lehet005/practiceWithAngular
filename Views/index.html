@@ -13,11 +13,12 @@
 
 <body>
     <h1>Super Class Super Angular Super Fun!</h1>
+    <hr>
 
-    <div class="listContainer" >
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6" ng-app="cougarApp" ng-controller="CougarController">
-                <div class="morris">
+                <div class="morris padded">
                     <h1>WordLists</h1>
                     <hr/>
                     <ul class="unstyled">
@@ -34,8 +35,8 @@
                 </div>
 
             </div>
-            <div class="col-md-6 padded" ng-app="todoApp">
-                <div class="morris">
+            <div class="col-md-6" ng-app="todoApp">
+                <div class="morris padded">
                     <h2>Todo</h2>
                     <div ng-controller="TodoController">
                         <span>{{remaining()}} of {{todos.length}} remaining</span>
@@ -53,7 +54,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
