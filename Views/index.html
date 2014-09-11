@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../style.css">
     <script type="text/javascript" src="../bower_components/angular/angular.min.js" ></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script> -->
+    <script type="text/javascript" src="../bower_components/ng-module/ng-module.js"></script>
     <script src="../javascripts/angularfile1.js"></script>
     <script src="../javascripts/todo.js"></script>
     <meta charset="UTF-8">
@@ -17,8 +18,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6" ng-app="cougarApp" ng-controller="CougarController">
-                <div class="morris padded">
+            <div class="col-md-6" ng-module="cougarApp" >
+                <div class="morris padded" ng-controller="CougarController">
                     <h1>WordLists</h1>
                     <hr/>
                     <ul class="unstyled">
@@ -35,7 +36,7 @@
                 </div>
 
             </div>
-            <div class="col-md-6" ng-app="todoApp">
+            <div class="col-md-6" ng-module="todoApp">
                 <div class="morris padded">
                     <h2>Todo</h2>
                     <div ng-controller="TodoController">
