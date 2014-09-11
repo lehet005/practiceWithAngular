@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style.css">
     <script type="text/javascript" src="../bower_components/angular/angular.min.js" ></script>
+    <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script> -->
     <script type="text/javascript" src="../bower_components/ng-module/ng-module.js"></script>
     <script src="../javascripts/angularfile1.js"></script>
@@ -33,8 +34,21 @@
                         <input type="text" ng-model="todoText" size="40" placeholder="add new todo title!">
                         <input class="btn-primary" type="submit" value="add">
                     </form>
-                </div>
 
+                    <div class="btn-group" dropdown is-open="status.isopen">
+                        <button type="button" class="btn btn-primary dropdown-toggle">
+                            Actions <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" ng-click="addCougar()">new item</a></li>
+                            <li><a href="#" ng-click="clearCougars()">clear list</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="morris padded">
