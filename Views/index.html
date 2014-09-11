@@ -12,14 +12,14 @@
     <title></title>
 </head>
 
-<body>
+<body ng-app="cougarApp">
     <h1>Super Class Super Angular Super Fun!</h1>
     <hr>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6" ng-module="cougarApp" >
-                <div class="morris padded" ng-controller="CougarController">
+            <div class="col-md-6" ng-controller="CougarController">
+                <div class="morris padded">
                     <h1>WordLists</h1>
                     <hr/>
                     <ul class="unstyled">
@@ -36,7 +36,7 @@
                 </div>
 
             </div>
-            <div class="col-md-6" ng-module="todoApp">
+            <div class="col-md-6">
                 <div class="morris padded">
                     <h2>Todo</h2>
                     <div ng-controller="TodoController">
@@ -57,6 +57,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- end fluid container -->
 </body>
 </html>
