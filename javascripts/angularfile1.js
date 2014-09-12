@@ -1,7 +1,7 @@
-angular.module('cougarApp', ['ui.bootstrap'])
+var cougarApp = angular.module('cougarApp', ['ui.bootstrap']);
 
     // controller for the list in the left hand column of index.html
-    .controller('CougarController', ['$scope', function($scope){
+    cougarApp.controller('CougarController', ['$scope', function($scope){
 
         $scope.cougarItems = [
             {text:'learn angular', done:true},
@@ -9,6 +9,8 @@ angular.module('cougarApp', ['ui.bootstrap'])
 
         $scope.alerts = [
         ];
+
+        $scope.text ={todoText: ''};
 
         $scope.addAlert = function(alertText){
             $scope.alerts.push({type: 'danger', msg: alertText});
@@ -19,13 +21,13 @@ angular.module('cougarApp', ['ui.bootstrap'])
         };
 
         $scope.addCougar = function() {
-            if($scope.todoText == null || $scope.todoText == ''){
+            if($scope.text.todoText == null || $scope.text.todoText == ''){
                 if($scope.alerts.length < 5) {
                     $scope.addAlert("you shouldn't add blank list items!");
                 }
             } else {
-                $scope.cougarItems.push({text:$scope.todoText, done:false});
-                $scope.todoText = '';
+                $scope.cougarItems.push({text:$scope.text.todoText, done:false});
+                $scope.text.todoText = '';
             }
         };
 
@@ -42,14 +44,17 @@ angular.module('cougarApp', ['ui.bootstrap'])
         };
 
         $scope.status = {
-            isopen: false
+            isopen: false,
+            isFirstOpen: true,
+            isFirstDisabled: false
         };
 
-    }])
+    }]);
 
+//var todoApp = angular.module('todoApp', []);
 
     //controller for todos in the right hand column of index.html
-    .controller('TodoController', ['$scope', function($scope) {
+    cougarApp.controller('TodoController', ['$scope', function($scope) {
         $scope.todos = [
             {text:'learn angular', done:true},
             {text:'build an angular app', done:false}];

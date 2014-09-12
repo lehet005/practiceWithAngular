@@ -17,3 +17,11 @@ hr {
     color: maroon;
     background-color: gold;
 }
+
+.morrisText {
+    color: maroon;
+}
+
+.inlineDisplay {
+    display: inline;
+}
