@@ -43,6 +43,10 @@ var cougarApp = angular.module('cougarApp', ['ui.bootstrap']);
             $scope.cougarItems = [];
         };
 
+        $scope.clearAlerts = function() {
+            $scope.alerts = [];
+        };
+
         $scope.status = {
             isopen: false,
             isFirstOpen: true,
@@ -51,10 +55,10 @@ var cougarApp = angular.module('cougarApp', ['ui.bootstrap']);
 
     }]);
 
-//var todoApp = angular.module('todoApp', []);
+var todoApp = angular.module('todoApp', []);
 
     //controller for todos in the right hand column of index.html
-    cougarApp.controller('TodoController', ['$scope', function($scope) {
+    todoApp.controller('TodoController', ['$scope', function($scope) {
         $scope.todos = [
             {text:'learn angular', done:true},
             {text:'build an angular app', done:false}];
