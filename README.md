@@ -20,3 +20,8 @@ The bower module for it has yet to update though, so for now the file will be li
 ####What to do before a good solution is found?
 For now, and possibly forever, the simplest solution seems to be just using only one angular app per page, and writing
 multiple controllers if you need separate features on one page.
+
+
+Peter And MARK!!!!111!!1!one!!!!!
+Forked from Emma and Joe.
+We add the sloth GIF and the string print and reverse string print as well as the note box.
