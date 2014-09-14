@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+        <!--Peter Hanson, Mark Lehet-->
+<!--forked from Joe und Emma-->
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -7,80 +9,118 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style.css">
 
-    <script type="text/javascript" src="../bower_components/angular/angular.min.js" ></script>
+    <script type="text/javascript" src="../bower_components/angular/angular.js" ></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script> -->
     <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <!--<script type="text/javascript" src="../bower_components/ng-module/ng-module.js"></script> -->
-    <!--<script type="text/javascript" src="../angular.ng-modules.js"></script>-->
-    <script type="text/javascript" src="https://raw.githubusercontent.com/luisperezphd/ngModule/master/angular.ng-modules.js"></script>
+    <script type="text/javascript" src="../angular.ng-modules.js"></script>
+    <!--<script type="text/javascript" src="https://raw.githubusercontent.com/luisperezphd/ngModule/master/angular.ng-modules.js"></script>-->
     <script src="../javascripts/angularfile1.js"></script>
+    <script src="../javascripts/BackWords.js"></script>
+    <script src="../javascripts/NoteApp.js"></script>
 </head>
 
 <body>
-    <h1>Super Class Super Angular Super Fun!</h1>
+    <h1>Flolow youdrems</h1>
     <hr>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6" ng-module="cougarApp" ng-controller="CougarController">
-                   <accordion close-others="false"> <!--accordians are one of angular bootstrap's features-->
-                        <accordion-group class="morris" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-                            <accordion-heading> <div class="morrisText">WordLists</div> </accordion-heading>
+    <!--<div class="container-fluid">-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-6" ng-module="cougarApp" ng-controller="CougarController">-->
+                   <!--<accordion close-others="false"> &lt;!&ndash;accordians are one of angular bootstrap's features&ndash;&gt;-->
+                        <!--<accordion-group class="morris" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">-->
+                            <!--<accordion-heading> <div class="morrisText">WordLists</div> </accordion-heading>-->
 
-                            <hr/> <!--when you click on the word Wordlists on the page, the list and area to add an item will show or hide-->
-                            <ul class="unstyled">
-                                <li ng-repeat="todo in cougarItems">
-                                    <span>{{todo.text}}</span>
-                                </li>
-                            </ul>
-                            <hr/>
+                            <!--<hr/> &lt;!&ndash;when you click on the word Wordlists on the page, the list and area to add an item will show or hide&ndash;&gt;-->
+                            <!--<ul class="unstyled">-->
+                                <!--<li ng-repeat="todo in cougarItems">-->
+                                    <!--<span>{{todo.text}}</span>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<hr/>-->
 
-                            <form class="inlineDisplay" ng-submit="addCougar()">
-                                <input type="text" ng-model="text.todoText" size="40" placeholder="add new todo title!">
-                                <input class="btn btn-primary" type="submit" value="add list item">
-                            </form>
+                            <!--<form class="inlineDisplay" ng-submit="addCougar()">-->
+                                <!--<input type="text" ng-model="text.todoText" size="40" placeholder="add new todo title!">-->
+                                <!--<input class="btn btn-primary" type="submit" value="add list item">-->
+                            <!--</form>-->
 
-                            <div class="btn-group" dropdown is-open="status.isopen">
-                                <button type="button" class="btn btn-primary dropdown-toggle">
-                                    Actions <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#" ng-click="addCougar()">add a new item</a></li>
-                                    <li><a href="#" ng-click="clearCougars()">clear list</a></li>
-                                    <li><a href="#" ng-click="clearAlerts()">clear alerts</a></li>
-                                </ul>
-                            </div>
-                        </accordion-group>
-                   </accordion>
+                            <!--<div class="btn-group" dropdown is-open="status.isopen">-->
+                                <!--<button type="button" class="btn btn-primary dropdown-toggle">-->
+                                    <!--Actions <span class="caret"></span>-->
+                                <!--</button>-->
+                                <!--<ul class="dropdown-menu" role="menu">-->
+                                    <!--<li><a href="#" ng-click="addCougar()">add a new item</a></li>-->
+                                    <!--<li><a href="#" ng-click="clearCougars()">clear list</a></li>-->
+                                    <!--<li><a href="#" ng-click="clearAlerts()">clear alerts</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</accordion-group>-->
+                   <!--</accordion>-->
 
-                          <!--alerts are also part of angular bootstrap. Here, the alert tells users when they're doing something
-                          wrong-->
-                    <div>
-                        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
-                    </div>
+                          <!--&lt;!&ndash;alerts are also part of angular bootstrap. Here, the alert tells users when they're doing something-->
+                          <!--wrong&ndash;&gt;-->
+                    <!--<div>-->
+                        <!--<alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>-->
+                    <!--</div>-->
 
-            </div>
-            <div class="col-md-6" ng-module="todoApp">
-                <div class="morris padded">
-                    <h2>Todo</h2>
-                    <div ng-controller="TodoController">
-                        <span>{{remaining()}} of {{todos.length}} remaining</span>
-                        [ <a href="" ng-click="archive()">archive</a> ]
-                        <ul class="unstyled">
-                            <li ng-repeat="todo in todos">
-                                <input type="checkbox" ng-model="todo.done">
-                                <span class="done-{{todo.done}}">{{todo.text}}</span>
-                            </li>
-                        </ul>
-                        <form ng-submit="addTodo()">
-                            <input type="text" ng-model="todoText"  size="40"
-                                   placeholder="add new todo here">
-                            <input class="btn-primary" type="submit" value="add">
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <!--</div>-->
+            <!--<div class="col-md-6" ng-module="todoApp">-->
+                <!--<div class="morris padded">-->
+                    <!--<h2>Todo</h2>-->
+                    <!--<div ng-controller="TodoController">-->
+                        <!--<span>{{remaining()}} of {{todos.length}} remaining</span>-->
+                        <!--[ <a href="" ng-click="archive()">archive</a> ]-->
+                        <!--<ul class="unstyled">-->
+                            <!--<li ng-repeat="todo in todos">-->
+                                <!--<input type="checkbox" ng-model="todo.done">-->
+                                <!--<span class="done-{{todo.done}}">{{todo.text}}</span>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<form ng-submit="addTodo()">-->
+                            <!--<input type="text" ng-model="todoText"  size="40"-->
+                                   <!--placeholder="add new todo here">-->
+                            <!--<input class="btn-primary" type="submit" value="add">-->
+                        <!--</form>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div> &lt;!&ndash; end fluid container &ndash;&gt;-->
+
+
+
+    <div ng-module="WordApp"> <!--This creates a reversed text from what you input-->
+
+        <div ng-controller="FirstCtrl">
+
+            <input type="text" ng-model="data">
+
+            <h1>{{data}}</h1>
+
+            <h1>{{reversedMessage()}}</h1>
+
         </div>
-    </div> <!-- end fluid container -->
+
+    </div>
+    <div class="thumbnail"> <!--Adds the sloth of destiny-->
+        <img class="img-circle" src='http://i.imgur.com/IeRQA6a.gif'>
+    </div>
+
+    <div ng-module="NoteApp" ng-controller="NotesControl"> <!--This adds the note box, and gives false hope-->
+
+        <h2>My Note</h2>
+
+        <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
+
+        <p>
+            <button ng_click="save()">False Hope</button>
+            <button ng-click="clear()">Clear</button>
+        </p>
+
+        <p>Number of characters left: <span>{{left()}}</span></p> <!--shows character limit-->
+
+    </div>
+
+
 </body>
 </html>
